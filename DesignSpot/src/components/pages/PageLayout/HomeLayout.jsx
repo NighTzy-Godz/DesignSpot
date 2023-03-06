@@ -1,5 +1,14 @@
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "../../ui/navbar/Navbar";
+
 const HomeLayout = () => {
-  return <div className="">Home Layout</div>;
+  return (
+    <React.Fragment>
+      <Navbar />
+      <Outlet></Outlet>
+    </React.Fragment>
+  );
 };
 
 export default HomeLayout;

@@ -1,0 +1,43 @@
+@media screen and (min-width: 1200px) {
+  .mainNav {
+    padding: 15px;
+  }
+
+  .nav_container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mainNav .logo a {
+    font-family: oswald-bold;
+    font-size: 40px;
+    color: var(--black);
+  }
+
+  .mainNav ul {
+    display: flex;
+    gap: 20px;
+  }
+
+  .mainNav li a {
+    font-family: sans-reg;
+    font-size: 21px;
+    color: var(--black);
+  }
+
+  .mainNav li a.active {
+    color: var(--dark-green);
+  }
+
+  .mainNav .components {
+    display: flex;
+    gap: 20px;
+  }
+
+  .mainNav .components a {
+    font-family: sans-reg;
+    font-size: 21px;
+    color: var(--black);
+  }
+}

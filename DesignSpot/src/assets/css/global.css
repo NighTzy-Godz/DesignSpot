@@ -18,31 +18,37 @@
   src: url("../fonts/SourceSansPro-Bold.ttf");
 }
 
-
 /* ========= GLOBAL CONFIGURATION =========== */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
- 
+
 :root {
   --darkest-green: #011c0d;
   --dark-green: #037637;
-  --normal-green: #05c95d
-  --light-green: #42fa94
+  --normal-green: #05c95d;
+  --light-green: #42fa94;
   --lightest-green: #95fcc3;
-  --white: ##effff6;
-  --black: #0d0d0d;
+  --white: #ffffff;
+  --black: #102a42;
 }
 
-.container{ 
-    width: 90%;    
-    margin: 0 auto;   
-}   
-
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
 
 img {
-    max-width: 100%;
-  }
+  max-width: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
