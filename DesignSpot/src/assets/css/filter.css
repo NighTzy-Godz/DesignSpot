@@ -1,0 +1,72 @@
+@media screen and (min-width: 800px) {
+  .filter {
+    background-color: var(--white);
+    border-bottom: 1px solid black;
+    padding: 20px 20%;
+  }
+
+  .filter_section {
+    margin-bottom: 20px;
+  }
+
+  .filter_section h3 {
+    font-family: oswald-bold;
+    font-size: 28px;
+    color: var(--normal-green);
+    margin-bottom: 7px;
+  }
+
+  .filter_section li {
+    color: var(--black-);
+    font-family: sans-reg;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .filter_section select {
+    width: 100%;
+    padding: 6px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: sans-reg;
+  }
+
+  .filter_section input[type="range"] {
+    background: linear-gradient(
+      to right,
+      #82cfd0 0%,
+      #82cfd0 40%,
+      #fff 40%,
+      #fff 100%
+    );
+    border: solid 2px #82cfd0;
+    border-radius: 8px;
+    height: 7px;
+    width: 100%;
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+  }
+
+  .filter_section input[type="range"]::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    cursor: ew-resize;
+    background: #434343;
+  }
+
+  .filter_section button {
+    cursor: pointer;
+    max-width: 230px;
+    min-width: 100px;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    font-family: sans-reg;
+    background-color: var(--dark-green);
+    color: var(--white);
+  }
+}

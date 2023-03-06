@@ -1,0 +1,19 @@
+@media screen and (min-width: 1200px) {
+  .product_layout {
+    background-color: rgb(242, 242, 242);
+    padding-top: 80px;
+  }
+
+  .product_layout_container {
+    display: flex;
+    gap: 20px;
+  }
+
+  .product_layout_left {
+    flex: 0.3;
+  }
+
+  .product_layout_right {
+    flex: 0.7;
+  }
+}
