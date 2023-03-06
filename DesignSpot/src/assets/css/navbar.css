@@ -27,6 +27,7 @@
   }
 
   .mainNav li a.active {
+    font-family: sans-bold;
     color: var(--dark-green);
   }
 
