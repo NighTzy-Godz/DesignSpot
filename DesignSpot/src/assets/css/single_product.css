@@ -1,9 +1,28 @@
 @media screen and (min-width: 1200px) {
+  .single_product {
+    padding: 100px 0px;
+  }
   .single_product_container {
     display: grid;
     margin-top: 20px;
     gap: 40px;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .single_product a {
+    font-family: sans-bold;
+    font-size: 15px;
+    padding: 5px 15px;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 3px;
+    margin-bottom: 30px;
+    transition: all 0.2s;
+  }
+
+  .single_product a:hover {
+    background-color: #103b61;
+    color: var(--white);
   }
 
   .single_product_left .img {
