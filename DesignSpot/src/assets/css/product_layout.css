@@ -1,19 +1,21 @@
 @media screen and (min-width: 1200px) {
   .product_layout {
-    background-color: rgb(242, 242, 242);
-    padding-top: 80px;
+    background-color: rgb(201, 201, 201);
+    padding: 80px 40px 0px 40px;
   }
 
   .product_layout_container {
     display: flex;
     gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
   }
 
   .product_layout_left {
-    flex: 0.3;
+    flex: 0.2 1;
   }
 
   .product_layout_right {
-    flex: 0.7;
+    flex: 0.8 1;
   }
 }

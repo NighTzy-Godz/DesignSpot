@@ -6,7 +6,7 @@ import DropDown from "./DropDown";
 import RangePrice from "./RangePrice";
 import Button from "../ui/button/Button";
 
-const Filter = () => {
+const Filter = ({ maxScroll }) => {
   const renderCategories = categories.map((item) => {
     return (
       <React.Fragment key={item.id}>
@@ -16,7 +16,7 @@ const Filter = () => {
   });
 
   return (
-    <div className="filter">
+    <div className={`filter ${maxScroll ? "maxScroll" : ""}`}>
       <div className="filter_section">
         <h3>Category</h3>
         <ul>{renderCategories}</ul>

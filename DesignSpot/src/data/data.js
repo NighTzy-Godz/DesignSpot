@@ -74,7 +74,7 @@ const furniture_data = [
 
   {
     id: 6,
-    name: "Orthorest Comfort Mattress",
+    name: "Maven Comfort Mattress",
     desc: "A 14 inches euro on pillow top mattress that is made of high resilient latex feel foam, Anti bacterial & Anti dust mite fabric with Pocketed spring system.",
     price: "₱44,765.00",
     category: { id: 1, name: "Mattress" },
@@ -126,7 +126,7 @@ const furniture_data = [
   },
   {
     id: 10,
-    name: "Perfect Spine Reserve Mattress",
+    name: " Spine Reserve Mattress",
     desc: "Immerse into the most comfortable sleeping space with relieving support. Reserve is the ideal option to rejuvenate through its soothing top Latex Layer and Luxurious Knit cover enhanced with support to achieve undisturbed sleep through its 5 zone Pocket Spring. Ease your fatigue and create your own personal consolation.",
     price: "₱77,000.00",
     category: { id: 1, name: "Mattress" },
@@ -156,7 +156,7 @@ const furniture_data = [
   },
   {
     id: 12,
-    name: "Padraig Chest of 3 Drawers",
+    name: "Pardon Chest of 3 Drawers",
     desc: "A Scandinavian style chest of drawers made from oak veneer wood with metal drawer handles and legs.",
     price: "₱12,565.00",
     category: { id: 2, name: "Cabinet" },

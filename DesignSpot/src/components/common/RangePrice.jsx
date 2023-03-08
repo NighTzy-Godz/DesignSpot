@@ -18,6 +18,7 @@ const RangePrice = () => {
   console.log(bg);
   return (
     <React.Fragment>
+      <p>Current Value: {value}</p>
       <input
         style={bg}
         type="range"

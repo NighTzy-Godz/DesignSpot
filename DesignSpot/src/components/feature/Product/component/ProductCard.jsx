@@ -1,3 +1,6 @@
+import "../../../../assets/css/product_card.css";
+import LinkButton from "../../../ui/button/LinkButton";
+
 const ProductCard = ({ data }) => {
   const {
     brand,
@@ -14,8 +17,17 @@ const ProductCard = ({ data }) => {
   } = data;
 
   return (
-    <div className="">
-      {id}: {name}
+    <div className="product_card">
+      <div className="product_img">
+        <img src={img} alt="" />
+      </div>
+      <div className="product_details">
+        <div className="product_card_container">
+          <h3>{name}</h3>
+          <p>{price}</p>
+        </div>
+        <LinkButton path="/" label="See More Details" />
+      </div>
     </div>
   );
 };
