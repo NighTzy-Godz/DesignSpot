@@ -1,10 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom";
 import "../../../../assets/css/single_product.css";
-import Counter from "../../../common/Counter";
+
 import useSingleProduct from "../hooks/useSingleProduct";
 import LinkButton from "../../../ui/button/LinkButton";
 import React, { useEffect } from "react";
 import { toast } from "react-toastify";
+import CartCounter from "./CartCounter";
 
 const SingleProduct = () => {
   const { productId } = useParams();
@@ -33,7 +34,7 @@ const SingleProduct = () => {
       stock,
       sku,
     } = product;
-    if (product.brand)
+    if (brand)
       return (
         <div className="container">
           <div className="single_product_container">
@@ -72,7 +73,7 @@ const SingleProduct = () => {
                 <p className="product_section_title">Color: </p>
                 <p className="product_section_data">{color}</p>
               </div>
-              <Counter />
+              <CartCounter />
             </div>
           </div>
         </div>
