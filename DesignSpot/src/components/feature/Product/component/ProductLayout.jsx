@@ -7,7 +7,7 @@ import useFilterDesign from "../hooks/useFilterDesign";
 
 const ProductLayout = () => {
   const { products } = useProduct();
-  console.log(products);
+
   const { filterMaxScroll } = useFilterDesign();
 
   useEffect(() => {

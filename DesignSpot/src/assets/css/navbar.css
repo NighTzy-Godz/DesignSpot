@@ -1,6 +1,7 @@
 @media screen and (min-width: 1200px) {
   .mainNav {
     padding: 15px;
+    box-shadow: 0 4px 30px rgba(113, 150, 191, 0.149);
   }
 
   .nav_container {

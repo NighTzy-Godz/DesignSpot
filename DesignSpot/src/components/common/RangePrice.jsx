@@ -14,8 +14,7 @@ const RangePrice = () => {
         }%, #fff ${value / 1000}%, white 100%)`,
       });
   };
-  // console.log(value);
-  console.log(bg);
+
   return (
     <React.Fragment>
       <p>Current Value: {value}</p>

@@ -26,7 +26,7 @@ const ProductCard = ({ data }) => {
           <h3>{name}</h3>
           <p>{price}</p>
         </div>
-        <LinkButton path="/" label="See More Details" />
+        <LinkButton path={`/products/${id}`} label="See More Details" />
       </div>
     </div>
   );
