@@ -3,14 +3,42 @@ import "../../../../assets/css/single_product.css";
 
 import useSingleProduct from "../hooks/useSingleProduct";
 import LinkButton from "../../../ui/button/LinkButton";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import CartCounter from "./CartCounter";
+import Button from "../../../ui/button/Button";
+// import cart from "../../../../data/cart";
+
+import { checkCartItem, getCart, setCart } from "../../../../services/storage";
 
 const SingleProduct = () => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const { product } = useSingleProduct(productId);
+
+  const {
+    brand,
+    color,
+    category,
+    desc,
+    id,
+    img,
+    name,
+    price,
+    size,
+    stock,
+    sku,
+  } = product;
+  const [itemQuantity, setItemQuantity] = useState(1);
+  const [cartDetail] = useState({
+    id: 0,
+    img: "",
+    name: "",
+    color: "",
+    price: "",
+    quantity: "",
+    subTotal: "",
+  });
 
   useEffect(() => {
     if (!product) {
@@ -19,21 +47,39 @@ const SingleProduct = () => {
     }
   });
 
+  const handleItemQuanity = (quantity) => {
+    setItemQuantity(quantity);
+  };
+
+  const handleAddCart = () => {
+    const currentCart = getCart();
+
+    const cartItem = checkCartItem(id);
+
+    if (cartItem) {
+      const newArr = [...currentCart];
+
+      const index = newArr.findIndex((item) => item.id === id);
+      newArr[index].quantity += itemQuantity;
+
+      return setCart("cart", newArr);
+    }
+
+    const newCart = { ...cartDetail };
+    newCart.id = id;
+    newCart.name = name;
+    newCart.img = img;
+    newCart.color = color;
+    newCart.price = price;
+    newCart.quantity = itemQuantity;
+    newCart.subTotal = parseInt(price) * itemQuantity;
+
+    setCart("cart", currentCart);
+  };
+
   const renderContent = () => {
     if (!product) return;
-    const {
-      brand,
-      color,
-      category,
-      desc,
-      id,
-      img,
-      name,
-      price,
-      size,
-      stock,
-      sku,
-    } = product;
+
     if (brand)
       return (
         <div className="single_product">
@@ -74,7 +120,11 @@ const SingleProduct = () => {
                   <p className="product_section_title">Color: </p>
                   <p className="product_section_data">{color}</p>
                 </div>
-                <CartCounter />
+                <CartCounter
+                  itemQuantity={itemQuantity}
+                  onQuantityChange={handleItemQuanity}
+                />
+                <Button text="Add To Cart" btnEvent={handleAddCart} />
               </div>
             </div>
           </div>

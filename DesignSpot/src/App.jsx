@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -9,8 +10,15 @@ import SingleProduct from "./components/feature/Product/component/SingleProduct"
 
 import Home from "./components/pages/Home";
 import HomeLayout from "./components/pages/PageLayout/HomeLayout";
+import { getCart, setCart } from "./services/storage";
 
 function App() {
+  useEffect(() => {
+    const currCart = getCart();
+    const cart = [];
+    if (!currCart) setCart("cart", cart);
+  }, []);
+
   return (
     <BrowserRouter>
       <ToastContainer />
