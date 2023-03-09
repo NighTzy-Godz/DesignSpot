@@ -37,23 +37,14 @@ const Navbar = () => {
           </div>
           <div className="components">
             <NavLink
-              to="/"
+              to="/cart"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Cart
             </NavLink>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Twitter
-            </NavLink>
-            <NavLink
-              to="/"
-              className={({ isActive }) => (isActive ? "active" : "")}
-            >
-              Facebook
-            </NavLink>
+            <a href="https://www.twitter.com"> Twitter</a>
+
+            <a href="https://wwww.fb.com">Facebook</a>
           </div>
         </div>
       </div>

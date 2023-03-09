@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./assets/css/global.css";
+import CartList from "./components/feature/Cart/CartList";
 
 import ProductLayout from "./components/feature/Product/component/ProductLayout";
 
@@ -27,6 +28,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="products" element={<ProductLayout />} />
           <Route path="products/:productId" element={<SingleProduct />} />
+          <Route path="cart" element={<CartList />} />
         </Route>
       </Routes>
     </BrowserRouter>

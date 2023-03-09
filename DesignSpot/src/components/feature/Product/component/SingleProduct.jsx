@@ -73,6 +73,7 @@ const SingleProduct = () => {
     newCart.price = price;
     newCart.quantity = itemQuantity;
     newCart.subTotal = parseInt(price) * itemQuantity;
+    currentCart.push(newCart);
 
     setCart("cart", currentCart);
   };
