@@ -1,0 +1,27 @@
+@media screen and (min-width: 1200px) {
+  .check_out {
+    margin-top: 40px;
+    width: 530px;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    padding: 20px 50px;
+  }
+
+  .checkout_container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .checkout_container h5 {
+    font-family: sans-bold;
+    font-size: 18px;
+    color: var(--black);
+    margin-bottom: 15px;
+  }
+
+  .checkout_container h3 {
+    font-family: sans-bold;
+    font-size: 24px;
+    color: var(--black);
+    margin-top: 10px;
+  }
+}

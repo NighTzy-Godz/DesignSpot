@@ -4,7 +4,7 @@ import Button from "../../ui/button/Button";
 import CartCounter from "../Product/component/CartCounter";
 import updateCartQty from "./utils/UpdateCartQty";
 
-const CartBody = ({ data, onCartChange }) => {
+const CartBody = ({ data, onCartChange, onAllPriceChange }) => {
   const cart = getCart();
 
   const { id, img, name, color, price, quantity, subTotal } = data;
@@ -13,6 +13,7 @@ const CartBody = ({ data, onCartChange }) => {
 
   const handleQuantityChange = (quantity) => {
     const itemSubTotal = updateCartQty(id, cart, quantity);
+    onAllPriceChange(itemSubTotal);
     setItemQuantity(quantity);
     setItemSubTotal(itemSubTotal);
   };
