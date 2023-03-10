@@ -2,6 +2,7 @@ import "../../../assets/css/checkout_box.css";
 
 const CheckOutBox = ({ cart, allPrice }) => {
   const shippingFee = 74;
+  const total = allPrice + shippingFee;
   return (
     <div className="check_out">
       <div className="checkout_container">
@@ -16,7 +17,9 @@ const CheckOutBox = ({ cart, allPrice }) => {
       <hr />
       <div className="checkout_container">
         <h3>Total: </h3>
-        <h3 className="checkout_total">₱{allPrice + shippingFee}</h3>
+        <h3 className="checkout_total">
+          ₱{new Intl.NumberFormat().format(total)}
+        </h3>
       </div>
     </div>
   );

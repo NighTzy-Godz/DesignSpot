@@ -15,6 +15,7 @@ const CartList = () => {
   const { total } = useTotalPrice(cart);
   const [currCart, setCurrCart] = useState(cart);
   const [allTotal, setAllTotal] = useState(total);
+  const [allTotal1, setAllTotal1] = useState(0);
 
   useEffect(() => {
     setAllTotal(total);
@@ -26,7 +27,7 @@ const CartList = () => {
   };
 
   const handleAllPrice = (price) => {
-    setAllTotal(price);
+    setAllTotal1(price);
   };
 
   const renderCartBody = () => {
