@@ -22,7 +22,6 @@
 
   .single_product a:hover {
     background-color: #103b61;
-    color: var(--white);
   }
 
   .single_product_left .img {

@@ -24,7 +24,7 @@ const ProductCard = ({ data }) => {
       <div className="product_details">
         <div className="product_card_container">
           <h3>{name}</h3>
-          <p>{price}</p>
+          <p>₱{price}</p>
         </div>
         <LinkButton path={`/products/${id}`} label="See More Details" />
       </div>

@@ -2,26 +2,30 @@ import React, { useState } from "react";
 import { getCart, setCart } from "../../../services/storage";
 import Button from "../../ui/button/Button";
 import CartCounter from "../Product/component/CartCounter";
+import updateCartQty from "./utils/UpdateCartQty";
 
-const CartBody = ({ data }) => {
-  const { id, img, name, color, price, quantity, subTotal } = data;
-  const [itemQuantity, setItemQuantity] = useState(quantity);
-
+const CartBody = ({ data, onCartChange }) => {
   const cart = getCart();
 
+  const { id, img, name, color, price, quantity, subTotal } = data;
+  const [itemQuantity, setItemQuantity] = useState(quantity);
+  const [itemSubTotal, setItemSubTotal] = useState(subTotal);
+
   const handleQuantityChange = (quantity) => {
-    updateCartQty(quantity);
+    const itemSubTotal = updateCartQty(id, cart, quantity);
     setItemQuantity(quantity);
+    setItemSubTotal(itemSubTotal);
   };
 
-  const updateCartQty = (qty) => {
-    const newArr = [...cart];
-    const index = newArr.findIndex((i) => i.id === id);
-    newArr[index].quantity = qty;
-    newArr[index].subTotal =
-      parseInt(newArr[index].price) * newArr[index].quantity;
-    setCart("cart", newArr);
+  const handleDeleteItem = () => {
+    const newCart = cart.filter((item) => {
+      return item.id !== id;
+    });
+
+    setCart("cart", newCart);
+    onCartChange(newCart);
   };
+
   return (
     <React.Fragment>
       <tr className="cart_body">
@@ -51,13 +55,13 @@ const CartBody = ({ data }) => {
         </td>
         <td className="table-width-80">
           <div className="cart_subtotal">
-            <h4>P{subTotal}</h4>
+            <h4>P{itemSubTotal}</h4>
           </div>
         </td>
 
-        <td className="table-width-80">
+        <td className="table-width-30">
           <div className="cart_del_btn">
-            <Button text="Delete" />
+            <Button text="Delete" btnEvent={handleDeleteItem} />
           </div>
         </td>
       </tr>

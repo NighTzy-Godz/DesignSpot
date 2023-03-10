@@ -29,6 +29,7 @@ const SingleProduct = () => {
     stock,
     sku,
   } = product;
+
   const [itemQuantity, setItemQuantity] = useState(1);
   const [cartDetail] = useState({
     id: 0,
@@ -61,7 +62,8 @@ const SingleProduct = () => {
 
       const index = newArr.findIndex((item) => item.id === id);
       newArr[index].quantity += itemQuantity;
-
+      newArr[index].subTotal = parseInt(price) * newArr[index].quantity;
+      console.log(newArr);
       return setCart("cart", newArr);
     }
 
@@ -94,7 +96,7 @@ const SingleProduct = () => {
               </div>
               <div className="single_product_right">
                 <h1 className="product_name">{name}</h1>
-                <p className="product_price">{price}</p>
+                <p className="product_price">₱{price}</p>
                 <p className="product_desc">{desc}</p>
 
                 <div className="product_section">
@@ -125,7 +127,13 @@ const SingleProduct = () => {
                   itemQuantity={itemQuantity}
                   onQuantityChange={handleItemQuanity}
                 />
-                <Button text="Add To Cart" btnEvent={handleAddCart} />
+
+                <LinkButton
+                  label="Add to Cart"
+                  path="/cart"
+                  btnEvent={handleAddCart}
+                />
+                {/* <Button text="Add To Cart" btnEvent={handleAddCart} /> */}
               </div>
             </div>
           </div>

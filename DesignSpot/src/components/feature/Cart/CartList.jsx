@@ -1,24 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../assets/css/cart_list.css";
 import { getCart } from "../../../services/storage";
+import Button from "../../ui/button/Button";
+import LinkButton from "../../ui/button/LinkButton";
+
 import CartBody from "./CartBody";
 import CartHeaders from "./CartHeaders";
+import cart_header from "./utils/cartHeader";
 
 const CartList = () => {
-  // const cart_header = ["Item", "Price", "Quantity", "Subtotal"];
-  const cart_header = [
-    { name: "Item", class: "table-width-100" },
-    { name: "Price", class: "table-width-80" },
-    { name: "Quantity", class: "table-width-80" },
-    { name: "SubTotal", class: "table-width-80" },
-  ];
   const cart = getCart();
 
+  const [currCart, setCurrCart] = useState(cart);
+
+  const handleCartChange = (cart) => {
+    setCurrCart(cart);
+  };
+
   const renderCartBody = () => {
-    return cart.map((item) => {
+    return currCart.map((item) => {
       return (
         <React.Fragment key={item.id}>
-          <CartBody data={item} />
+          <CartBody data={item} onCartChange={handleCartChange} />
         </React.Fragment>
       );
     });
@@ -38,6 +41,12 @@ const CartList = () => {
 
             <tbody>{renderCartBody()}</tbody>
           </table>
+
+          <hr />
+          <div className="cart_util_btn">
+            <LinkButton path="/products" label="Go Back to All Products" />
+            <Button text="Clear Shopping Cart" />
+          </div>
         </div>
       </div>
     );
