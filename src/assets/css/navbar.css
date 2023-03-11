@@ -27,7 +27,8 @@
     color: var(--black);
   }
 
-  .mainNav li a.active {
+  .mainNav li a.active,
+  .mainNav .components a.active {
     font-family: sans-bold;
     color: var(--dark-green);
   }

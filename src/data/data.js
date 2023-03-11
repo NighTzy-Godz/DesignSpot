@@ -48,7 +48,7 @@ const furniture_data = [
     id: 4,
     name: "Panther 2 Seater Sofa",
     desc: "A Modern Contemporary style 2-seater sofa made with metal framing, fully padded and upholstered in fabric.",
-    price: "8,660",
+    price: "8660",
     category: { id: 0, name: "Sofa" },
     img: "https://cdn.shopify.com/s/files/1/0290/6177/5439/products/panther-2s_10408781_1079x.jpg?v=1666579587",
     brand: randomBrand(),

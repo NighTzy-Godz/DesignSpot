@@ -1,7 +1,7 @@
 @media screen and (min-width: 1200px) {
   .product_layout {
     background-color: rgb(201, 201, 201);
-    padding: 80px 40px 0px 40px;
+    padding: 80px 40px 40px 40px;
   }
 
   .product_layout_container {

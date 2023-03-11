@@ -1,4 +1,5 @@
 import "../../../../assets/css/product_card.css";
+import formatPrice from "../../../../utils/formatPrice";
 import LinkButton from "../../../ui/button/LinkButton";
 
 const ProductCard = ({ data }) => {
@@ -24,7 +25,7 @@ const ProductCard = ({ data }) => {
       <div className="product_details">
         <div className="product_card_container">
           <h3>{name}</h3>
-          <p>₱{price}</p>
+          <p>₱{formatPrice(price)}</p>
         </div>
         <LinkButton path={`/products/${id}`} label="See More Details" />
       </div>
