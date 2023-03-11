@@ -10,6 +10,7 @@ import Button from "../../../ui/button/Button";
 // import cart from "../../../../data/cart";
 
 import { checkCartItem, getCart, setCart } from "../../../../services/storage";
+import formatPrice from "../../../../utils/formatPrice";
 
 const SingleProduct = () => {
   const { productId } = useParams();
@@ -82,12 +83,16 @@ const SingleProduct = () => {
 
   const renderContent = () => {
     if (!product) return;
-
+    console.log(formatPrice(price));
     if (brand)
       return (
         <div className="single_product">
           <div className="container">
-            <LinkButton path="/products" label="<= Go Back to All Products" />
+            <LinkButton
+              path="/products"
+              label="<= Go Back to All Products"
+              className="product_goBack_btn"
+            />
             <div className="single_product_container">
               <div className="single_product_left">
                 <div className="img">
@@ -96,7 +101,7 @@ const SingleProduct = () => {
               </div>
               <div className="single_product_right">
                 <h1 className="product_name">{name}</h1>
-                <p className="product_price">₱{price}</p>
+                <p className="product_price">₱{formatPrice(price)}</p>
                 <p className="product_desc">{desc}</p>
 
                 <div className="product_section">
@@ -132,6 +137,7 @@ const SingleProduct = () => {
                   label="Add to Cart"
                   path="/cart"
                   btnEvent={handleAddCart}
+                  className="product_cart_btn"
                 />
                 {/* <Button text="Add To Cart" btnEvent={handleAddCart} /> */}
               </div>

@@ -7,6 +7,11 @@ const setCart = (name, data) => {
   window.localStorage.setItem(name, JSON.stringify(data));
 };
 
+const deleteCart = (name) => {
+  const arr = [];
+  window.localStorage.setItem(name, JSON.stringify(arr));
+};
+
 const checkCartItem = (id) => {
   try {
     const cart = getCart();
@@ -20,4 +25,4 @@ const checkCartItem = (id) => {
   }
 };
 
-export { checkCartItem, setCart, getCart };
+export { checkCartItem, deleteCart, setCart, getCart };

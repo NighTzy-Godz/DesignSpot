@@ -1,4 +1,5 @@
 import "../../../assets/css/checkout_box.css";
+import formatPrice from "../../../utils/formatPrice";
 
 const CheckOutBox = ({ cart, allPrice }) => {
   const shippingFee = 74;
@@ -7,7 +8,7 @@ const CheckOutBox = ({ cart, allPrice }) => {
     <div className="check_out">
       <div className="checkout_container">
         <h5>Subtotal:</h5>
-        <h5>₱{allPrice}</h5>
+        <h5>₱{formatPrice(allPrice)}</h5>
       </div>
       <div className="checkout_container">
         <h5>Shipping Fee:</h5>
@@ -17,9 +18,7 @@ const CheckOutBox = ({ cart, allPrice }) => {
       <hr />
       <div className="checkout_container">
         <h3>Total: </h3>
-        <h3 className="checkout_total">
-          ₱{new Intl.NumberFormat().format(total)}
-        </h3>
+        <h3 className="checkout_total">₱{formatPrice(total)}</h3>
       </div>
     </div>
   );

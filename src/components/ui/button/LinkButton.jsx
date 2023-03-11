@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const LinkButton = ({ path, label, btnEvent = () => {} }) => {
+const LinkButton = ({ path, className = "", label, btnEvent = () => {} }) => {
   return (
     <React.Fragment>
-      <Link to={path} onClick={btnEvent}>
+      <Link to={path} className={className} onClick={btnEvent}>
         {label}
       </Link>
     </React.Fragment>

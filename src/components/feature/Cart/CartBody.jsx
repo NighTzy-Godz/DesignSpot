@@ -3,6 +3,9 @@ import { getCart, setCart } from "../../../services/storage";
 import Button from "../../ui/button/Button";
 import CartCounter from "../Product/component/CartCounter";
 import updateCartQty from "./utils/UpdateCartQty";
+import "../../../assets/css/cart_body.css";
+import formatPrice from "../../../utils/formatPrice";
+import { Link } from "react-router-dom";
 
 const CartBody = ({ data, onCartChange, onAllPriceChange }) => {
   const cart = getCart();
@@ -36,14 +39,15 @@ const CartBody = ({ data, onCartChange, onAllPriceChange }) => {
               <img src={img} alt="" />
             </div>
             <div className="details">
-              <h4>{name}</h4>
+              <Link to={`/products/${id}`}>{name}</Link>
+
               <p>Color: {color}</p>
             </div>
           </div>
         </td>
         <td className="table-width-80">
           <div className="cart_price">
-            <h4>P{price}</h4>
+            <h4>P{formatPrice(price)}</h4>
           </div>
         </td>
         <td className="table-width-80">
@@ -56,7 +60,7 @@ const CartBody = ({ data, onCartChange, onAllPriceChange }) => {
         </td>
         <td className="table-width-80">
           <div className="cart_subtotal">
-            <h4>P{itemSubTotal}</h4>
+            <h4>P{formatPrice(itemSubTotal)}</h4>
           </div>
         </td>
 

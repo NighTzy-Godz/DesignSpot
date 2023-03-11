@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import "../../../assets/css/cart_list.css";
-import { getCart } from "../../../services/storage";
+import { deleteCart, getCart } from "../../../services/storage";
 import Button from "../../ui/button/Button";
 import LinkButton from "../../ui/button/LinkButton";
 
 import CartBody from "./CartBody";
+import CartEmpty from "./CartEmpty";
 import CartHeaders from "./CartHeaders";
 import CheckOutBox from "./CheckoutBox";
 import useTotalPrice from "./useTotalPrice";
@@ -15,7 +17,7 @@ const CartList = () => {
   const { total } = useTotalPrice(cart);
   const [currCart, setCurrCart] = useState(cart);
   const [allTotal, setAllTotal] = useState(total);
-  const [allTotal1, setAllTotal1] = useState(0);
+  const [toggler, setToggler] = useState(0);
 
   useEffect(() => {
     setAllTotal(total);
@@ -27,7 +29,19 @@ const CartList = () => {
   };
 
   const handleAllPrice = (price) => {
-    setAllTotal1(price);
+    setToggler(price);
+  };
+
+  const handleClearCart = () => {
+    setToggler(1);
+    deleteCart("cart");
+  };
+
+  const handleCheckOut = () => {
+    toast.success("Successfully Checked Out the Items. Thank You for buying!", {
+      autoClose: 2500,
+    });
+    deleteCart("cart");
   };
 
   const renderCartBody = () => {
@@ -46,7 +60,7 @@ const CartList = () => {
 
   const renderContent = () => {
     if (cart.length === 0) {
-      return <h1>No Items In THe Cart</h1>;
+      return <CartEmpty />;
     }
 
     return (
@@ -56,19 +70,32 @@ const CartList = () => {
             <thead>
               <CartHeaders headers={cart_header} />
             </thead>
-
             <tbody>{renderCartBody()}</tbody>
           </table>
 
           <hr />
           <div className="cart_util_btn">
-            <LinkButton path="/products" label="Go Back to All Products" />
-            <Button text="Clear Shopping Cart" />
+            <LinkButton
+              path="/products"
+              label="Go Back to All Products"
+              className="cart_list_btn"
+            />
+            <Button
+              text="Clear Shopping Cart"
+              className="cart_list_btn"
+              btnEvent={handleClearCart}
+            />
           </div>
 
           <CheckOutBox cart={currCart} allPrice={allTotal} />
+
           <div className="checkout_btn">
-            <LinkButton label="Checkout" path="/" />
+            <LinkButton
+              label="Checkout"
+              path="/"
+              className="cart_list_btn"
+              btnEvent={handleCheckOut}
+            />
           </div>
         </div>
       </div>

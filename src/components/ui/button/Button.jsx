@@ -1,9 +1,11 @@
 import React from "react";
 
-const Button = ({ text, btnEvent = () => {} }) => {
+const Button = ({ text, className = "", btnEvent = () => {} }) => {
   return (
     <React.Fragment>
-      <button onClick={btnEvent}>{text}</button>
+      <button className={className} onClick={btnEvent}>
+        {text}
+      </button>
     </React.Fragment>
   );
 };
