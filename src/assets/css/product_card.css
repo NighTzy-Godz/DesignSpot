@@ -3,8 +3,8 @@
     background-color: var(--white);
     border-radius: 8px;
     position: relative;
-    /* max-width: 400px; */
-    height: 410px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    height: 415px;
   }
 
   .product_img img {
@@ -42,7 +42,7 @@
     padding: 5px 10px;
     font-family: sans-reg;
     position: absolute;
-    bottom: 15px;
+    bottom: 17px;
     font-size: 14px;
 
     border-radius: 5px;

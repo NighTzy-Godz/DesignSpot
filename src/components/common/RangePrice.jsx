@@ -1,27 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import formatPrice from "../../utils/formatPrice";
 
-const RangePrice = () => {
-  const [value, setValue] = useState(40000);
+const RangePrice = ({ range, onRangeChange }) => {
+  const style = {
+    fontFamily: "sans-bold",
+    color: "var(--black)",
+    fontSize: "16px",
+  };
+
   const [bg, setBg] = useState({});
 
   const handleRange = (e) => {
-    setValue(e.currentTarget.value);
-
-    if (value)
+    onRangeChange(e.currentTarget.value);
+    if (range)
       setBg({
         background: `linear-gradient(to right, #82CFD0 0%, #82CFD0 ${
-          value / 1000
-        }%, #fff ${value / 1000}%, white 100%)`,
+          range / 1000
+        }%, #fff ${range / 1000}%, white 100%)`,
       });
   };
 
   return (
     <React.Fragment>
-      <p>Current Value: {value}</p>
+      <p style={style}>Current Value: ₱{formatPrice(range)}</p>
       <input
         style={bg}
         type="range"
-        value={value}
+        value={range}
         min={0}
         max={100000}
         onInput={handleRange}

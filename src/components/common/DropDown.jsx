@@ -1,17 +1,19 @@
 import React from "react";
 
-const DropDown = ({ data }) => {
+const DropDown = ({ currentBrand, data, eventHandler }) => {
+  console.log(currentBrand);
+
   const renderOptions = data.map((item) => {
     return (
       <React.Fragment key={item.id}>
-        <option>{item.name}</option>
+        <option value={item.name}>{item.name}</option>
       </React.Fragment>
     );
   });
 
   return (
     <div className="dropdown">
-      <select name="" id="">
+      <select value={currentBrand} name="" id="" onChange={eventHandler}>
         {renderOptions}
       </select>
     </div>

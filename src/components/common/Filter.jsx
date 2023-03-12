@@ -1,16 +1,33 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../../assets/css/filter.css";
-import categories from "../../data/category";
-import brands from "../../data/brand";
+
 import DropDown from "./DropDown";
-import RangePrice from "./RangePrice";
+
 import Button from "../ui/button/Button";
 
-const Filter = ({ maxScroll }) => {
-  const renderCategories = categories.map((item) => {
+const Filter = ({
+  maxScroll,
+  filters,
+  onCategoryChange,
+  onBrandChange,
+  onRangeChange,
+  onClearFilter,
+}) => {
+  const { currentBrand, currentCategory, brands, category } = filters;
+
+  const handleCategoryChange = (category) => {
+    onCategoryChange(category);
+  };
+
+  const renderCategories = category.map((item) => {
     return (
       <React.Fragment key={item.id}>
-        <li>{item.name}</li>
+        <li
+          className={`${currentCategory.id === item.id ? "active" : ""}`}
+          onClick={() => handleCategoryChange(item)}
+        >
+          {item.name}
+        </li>
       </React.Fragment>
     );
   });
@@ -23,16 +40,15 @@ const Filter = ({ maxScroll }) => {
       </div>
       <div className="filter_section">
         <h3>Brands</h3>
-        <DropDown data={brands} />
+        <DropDown
+          currentBrand={currentBrand}
+          data={brands}
+          eventHandler={onBrandChange}
+        />
       </div>
 
       <div className="filter_section">
-        <h3>Price Range</h3>
-
-        <RangePrice />
-      </div>
-      <div className="filter_section">
-        <Button text="Clear Filters" />
+        <Button text="Clear Filters" btnEvent={onClearFilter} />
       </div>
     </div>
   );

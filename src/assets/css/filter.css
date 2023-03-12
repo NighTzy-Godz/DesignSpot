@@ -1,7 +1,7 @@
 @media screen and (min-width: 1200px) {
   .filter {
     background-color: var(--white);
-    border-bottom: 1px solid black;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     padding: 20px;
     /* width: 300px; */
   }
@@ -15,6 +15,10 @@
 
   .filter_section {
     margin-bottom: 20px;
+  }
+
+  .filter_section:last-child {
+    margin-bottom: 0;
   }
 
   .filter_section h3 {
@@ -32,38 +36,16 @@
     margin-bottom: 5px;
   }
 
+  .filter_section li.active {
+    color: var(--normal-green);
+  }
+
   .filter_section select {
     width: 100%;
     padding: 6px;
     border-radius: 8px;
     font-size: 16px;
     font-family: sans-reg;
-  }
-
-  .filter_section input[type="range"] {
-    background: linear-gradient(
-      to right,
-      #82cfd0 0%,
-      #82cfd0 40%,
-      #fff 40%,
-      #fff 100%
-    );
-    border: solid 2px #82cfd0;
-    border-radius: 8px;
-    height: 7px;
-    width: 100%;
-    outline: none;
-    transition: background 450ms ease-in;
-    -webkit-appearance: none;
-  }
-
-  .filter_section input[type="range"]::-webkit-slider-thumb {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    -webkit-appearance: none;
-    cursor: ew-resize;
-    background: #434343;
   }
 
   .filter_section button {
@@ -77,5 +59,11 @@
     font-family: sans-reg;
     background-color: var(--dark-green);
     color: var(--white);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .filter_section button:hover {
+    background-color: var(--light-green);
+    color: var(--black);
   }
 }

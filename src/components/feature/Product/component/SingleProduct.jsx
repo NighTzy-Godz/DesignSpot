@@ -20,7 +20,7 @@ const SingleProduct = () => {
   const {
     brand,
     color,
-    category,
+
     desc,
     id,
     img,
