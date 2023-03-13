@@ -43,15 +43,11 @@ const ProductLayout = () => {
   };
 
   const handleCategoryChange = (category) => {
-    setState({ ...state, currentCategory: category });
-  };
-
-  const handleRange = (range) => {
-    setState({ ...state, range });
+    setState({ ...state, currentCategory: category, search: "" });
   };
 
   const handleBrandChange = (e) => {
-    setState({ ...state, currentBrand: e.target.value });
+    setState({ ...state, currentBrand: e.target.value, search: "" });
   };
 
   const handleClearFilter = () => {
@@ -76,7 +72,6 @@ const ProductLayout = () => {
             <Filter
               filters={state}
               maxScroll={filterMaxScroll}
-              onRangeChange={handleRange}
               onCategoryChange={handleCategoryChange}
               onBrandChange={handleBrandChange}
               onClearFilter={handleClearFilter}

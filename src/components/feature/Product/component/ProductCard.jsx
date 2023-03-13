@@ -20,7 +20,7 @@ const ProductCard = ({ data }) => {
   return (
     <div className="product_card">
       <div className="product_img">
-        <img src={img} alt="" />
+        <img src={img} alt="" loading="lazy" />
       </div>
       <div className="product_details">
         <div className="product_card_container">
