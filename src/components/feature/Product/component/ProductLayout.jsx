@@ -8,6 +8,8 @@ import categories from "../../../../data/category";
 import brands from "../../../../data/brand";
 import filterData from "../../../../utils/filterData";
 import SearchBar from "../../../common/SearchBar";
+import CurrentItemsLabel from "../../../common/CurrentItemsLabel";
+import NoItem from "../../../common/NoItem";
 
 const ProductLayout = () => {
   const { products } = useProduct();
@@ -79,7 +81,14 @@ const ProductLayout = () => {
           </div>
 
           <div className="product_layout_right">
-            <ProductList products={filteredData} />
+            <CurrentItemsLabel
+              message={`${filteredData.length} Items Found.`}
+            />
+            {filteredData.length === 0 ? (
+              <NoItem lookingItem={search} />
+            ) : (
+              <ProductList products={filteredData} />
+            )}
           </div>
         </div>
       </div>

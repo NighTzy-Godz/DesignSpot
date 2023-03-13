@@ -33,4 +33,32 @@
   .product_layout_right {
     flex: 0.8 1;
   }
+
+  .product_layout_right .item_message {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .product_layout_right .item_message h4 {
+    font-family: sans-reg;
+    font-size: 20px;
+    color: var(--normal-green);
+    margin-top: 2px;
+    /* margin-left: 20px; */
+  }
+
+  .product_layout_right .item_message h4::after {
+    content: "";
+    width: 20%;
+    background: var(--black);
+    padding: 0.5px;
+    position: absolute;
+    margin-left: 20px;
+    top: 13px;
+  }
+
+  .product_layout_right .no_item h3 {
+    font-family: sans-reg;
+    font-size: 20px;
+    color: var(--black);
+  }
 }
