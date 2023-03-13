@@ -10,6 +10,8 @@ import filterData from "../../../../utils/filterData";
 import SearchBar from "../../../common/SearchBar";
 import CurrentItemsLabel from "../../../common/CurrentItemsLabel";
 import NoItem from "../../../common/NoItem";
+import Paginate from "../../../common/Paginate";
+import { paginate } from "../../../../utils/paginate";
 
 const ProductLayout = () => {
   const { products } = useProduct();
@@ -19,6 +21,8 @@ const ProductLayout = () => {
     brands: [],
     currentBrand: "All Brand",
     category: [],
+    pageSize: 5,
+    currentPage: 1,
     currentCategory: "All Categories",
     search: "",
     range: 10000,
@@ -44,12 +48,26 @@ const ProductLayout = () => {
     });
   };
 
+  const handlePageChange = (page) => {
+    setState({ ...state, currentPage: page });
+  };
+
   const handleCategoryChange = (category) => {
-    setState({ ...state, currentCategory: category, search: "" });
+    setState({
+      ...state,
+      currentCategory: category,
+      search: "",
+      currentPage: 1,
+    });
   };
 
   const handleBrandChange = (e) => {
-    setState({ ...state, currentBrand: e.target.value, search: "" });
+    setState({
+      ...state,
+      currentBrand: e.target.value,
+      search: "",
+      currentPage: 1,
+    });
   };
 
   const handleClearFilter = () => {
@@ -62,9 +80,17 @@ const ProductLayout = () => {
   };
 
   const renderContent = () => {
-    const { data, currentCategory, currentBrand, range, search } = state;
+    const {
+      data,
+      currentCategory,
+      currentBrand,
+      pageSize,
+      currentPage,
+      search,
+    } = state;
 
     let filteredData = filterData(currentCategory, currentBrand, data, search);
+    const allProducts = paginate(filteredData, currentPage, pageSize);
 
     return (
       <div className="product_layout">
@@ -82,13 +108,19 @@ const ProductLayout = () => {
 
           <div className="product_layout_right">
             <CurrentItemsLabel
-              message={`${filteredData.length} Items Found.`}
+              message={`${filteredData.length} Items was Found.`}
             />
             {filteredData.length === 0 ? (
-              <NoItem lookingItem={search} />
+              <NoItem />
             ) : (
-              <ProductList products={filteredData} />
+              <ProductList products={allProducts} />
             )}
+            <Paginate
+              itemCount={filteredData.length}
+              pageSize={pageSize}
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+            />
           </div>
         </div>
       </div>

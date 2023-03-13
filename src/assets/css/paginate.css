@@ -1,0 +1,22 @@
+@media screen and (min-width: 1200px) {
+  .paginate {
+    margin-top: 20px;
+  }
+
+  .paginate ul {
+    display: flex;
+  }
+
+  .paginate li {
+    padding: 8px;
+    border: 1px solid var(--normal-green);
+    color: var(-black);
+    font-family: sans-bold;
+    cursor: pointer;
+  }
+
+  .paginate li.active {
+    background: var(--normal-green);
+    color: white;
+  }
+}
