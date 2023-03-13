@@ -7,6 +7,7 @@ import useFilterDesign from "../hooks/useFilterDesign";
 import categories from "../../../../data/category";
 import brands from "../../../../data/brand";
 import filterData from "../../../../utils/filterData";
+import SearchBar from "../../../common/SearchBar";
 
 const ProductLayout = () => {
   const { products } = useProduct();
@@ -17,6 +18,7 @@ const ProductLayout = () => {
     currentBrand: "All Brand",
     category: [],
     currentCategory: "All Categories",
+    search: "",
     range: 10000,
   });
 
@@ -30,6 +32,15 @@ const ProductLayout = () => {
       brands: [{ name: "All Brand" }, ...brands],
     });
   }, [products]);
+
+  const handleSearch = (search) => {
+    setState({
+      ...state,
+      search,
+      currentBrand: "All Brand",
+      currentCategory: "All Categories",
+    });
+  };
 
   const handleCategoryChange = (category) => {
     setState({ ...state, currentCategory: category });
@@ -53,15 +64,15 @@ const ProductLayout = () => {
   };
 
   const renderContent = () => {
-    const { data, currentCategory, currentBrand, range } = state;
+    const { data, currentCategory, currentBrand, range, search } = state;
 
-    let filteredData = filterData(currentCategory, currentBrand, range, data);
-    console.log(state);
+    let filteredData = filterData(currentCategory, currentBrand, data, search);
 
     return (
       <div className="product_layout">
         <div className="product_layout_container">
           <div className="product_layout_left">
+            <SearchBar search={search} onSearchChange={handleSearch} />
             <Filter
               filters={state}
               maxScroll={filterMaxScroll}

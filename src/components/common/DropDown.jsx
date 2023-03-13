@@ -1,8 +1,6 @@
 import React from "react";
 
 const DropDown = ({ currentBrand, data, eventHandler }) => {
-  console.log(currentBrand);
-
   const renderOptions = data.map((item) => {
     return (
       <React.Fragment key={item.id}>

@@ -1,7 +1,15 @@
-const filterData = (currentCategory, currentBrand, range, data) => {
+const filterData = (currentCategory, currentBrand, data, search) => {
   let filterData = data;
 
-  if (currentCategory && currentCategory.id && currentBrand !== "All Brand") {
+  if (search) {
+    filterData = data.filter((item) => {
+      return item.name.toLowerCase().trim().includes(search.toLowerCase());
+    });
+  } else if (
+    currentCategory &&
+    currentCategory.id &&
+    currentBrand !== "All Brand"
+  ) {
     filterData = data.filter((item) => {
       return (
         item.brand.name === currentBrand &&
