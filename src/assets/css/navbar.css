@@ -1,6 +1,6 @@
 @media screen and (min-width: 1200px) {
   .mainNav {
-    padding: 15px;
+    padding: 12px;
     box-shadow: 0 4px 30px rgba(113, 150, 191, 0.149);
   }
 
@@ -12,7 +12,7 @@
 
   .mainNav .logo a {
     font-family: oswald-bold;
-    font-size: 40px;
+    font-size: 35px;
     color: var(--black);
   }
 
