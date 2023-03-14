@@ -20,6 +20,7 @@ const CartList = () => {
   const [toggler, setToggler] = useState(0);
 
   useEffect(() => {
+    document.title = "Cart List";
     setAllTotal(total);
     setCurrCart(cart);
   }, [total]);

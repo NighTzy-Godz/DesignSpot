@@ -43,6 +43,7 @@ const SingleProduct = () => {
   });
 
   useEffect(() => {
+    document.title = name;
     if (!product) {
       toast.error("Cannot find the item that you are looking for.");
       return navigate("/products");
