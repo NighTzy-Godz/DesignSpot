@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,22 +15,35 @@ import HomeLayout from "./components/pages/PageLayout/HomeLayout";
 import { getCart, setCart } from "./services/storage";
 
 function App() {
+  const [cart, setCart] = useState([]);
+
   useEffect(() => {
     const currCart = getCart();
     const cart = [];
-    if (!currCart) setCart("cart", cart);
+    if (!currCart) return setCart("cart", cart);
+    setCart(currCart);
   }, []);
+
+  const handleCartChange = (cart) => {
+    setCart(cart);
+  };
 
   return (
     <BrowserRouter>
       <ToastContainer />
       <Routes>
-        <Route path="/" element={<HomeLayout />}>
+        <Route path="/" element={<HomeLayout cart={cart} />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="products" element={<ProductLayout />} />
-          <Route path="products/:productId" element={<SingleProduct />} />
-          <Route path="cart" element={<CartList />} />
+          <Route
+            path="products/:productId"
+            element={<SingleProduct onCartChange={handleCartChange} />}
+          />
+          <Route
+            path="cart"
+            element={<CartList onCartChange={handleCartChange} />}
+          />
         </Route>
       </Routes>
     </BrowserRouter>

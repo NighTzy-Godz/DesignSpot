@@ -12,7 +12,7 @@ import Button from "../../../ui/button/Button";
 import { checkCartItem, getCart, setCart } from "../../../../services/storage";
 import formatPrice from "../../../../utils/formatPrice";
 
-const SingleProduct = () => {
+const SingleProduct = ({ onCartChange }) => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const { product } = useSingleProduct(productId);
@@ -65,7 +65,7 @@ const SingleProduct = () => {
       const index = newArr.findIndex((item) => item.id === id);
       newArr[index].quantity += itemQuantity;
       newArr[index].subTotal = parseInt(price) * newArr[index].quantity;
-      console.log(newArr);
+
       return setCart("cart", newArr);
     }
 
@@ -78,13 +78,13 @@ const SingleProduct = () => {
     newCart.quantity = itemQuantity;
     newCart.subTotal = parseInt(price) * itemQuantity;
     currentCart.push(newCart);
-
+    onCartChange(currentCart);
     setCart("cart", currentCart);
   };
 
   const renderContent = () => {
     if (!product) return;
-    console.log(formatPrice(price));
+
     if (brand)
       return (
         <div className="single_product">

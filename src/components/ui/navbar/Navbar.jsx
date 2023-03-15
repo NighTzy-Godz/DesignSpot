@@ -1,7 +1,13 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "../../../assets/css/navbar.css";
+import { getCart } from "../../../services/storage";
 
-const Navbar = () => {
+const Navbar = ({ cart }) => {
+  const isEmpty = () => {
+    return cart.length === 0 ? "" : "navCart";
+  };
+
   return (
     <div className="mainNav">
       <div className="container">
@@ -37,10 +43,13 @@ const Navbar = () => {
           </div>
           <div className="components">
             <NavLink
+              data-content={cart ? cart.length : null}
               to="/cart"
-              className={({ isActive }) => (isActive ? "active" : "")}
+              className={({ isActive }) =>
+                isActive ? `${isEmpty()} active` : `${isEmpty()}`
+              }
             >
-              Cart
+              Cart <i className="fa-solid fa-cart-shopping"></i>
             </NavLink>
             <a href="https://www.twitter.com"> Twitter</a>
 

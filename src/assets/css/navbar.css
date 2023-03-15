@@ -42,5 +42,23 @@
     font-family: sans-reg;
     font-size: 21px;
     color: var(--black);
+    position: relative;
+  }
+
+  .mainNav .navCart::before {
+    content: attr(data-content);
+    position: absolute;
+    font-family: sans-bold;
+    color: var(--black);
+    top: -0.7em;
+    right: -0.7em;
+    background-color: var(--light-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 16px;
   }
 }

@@ -30,6 +30,7 @@ const ProductLayout = () => {
 
   useEffect(() => {
     document.title = "Products";
+
     setState({
       ...state,
       data: products,

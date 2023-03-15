@@ -12,7 +12,7 @@ import CheckOutBox from "./CheckoutBox";
 import useTotalPrice from "./useTotalPrice";
 import cart_header from "./utils/cartHeader";
 
-const CartList = () => {
+const CartList = ({ onCartChange }) => {
   const cart = getCart();
   const { total } = useTotalPrice(cart);
   const [currCart, setCurrCart] = useState(cart);
@@ -27,6 +27,7 @@ const CartList = () => {
 
   const handleCartChange = (cart) => {
     setCurrCart(cart);
+    onCartChange(cart);
   };
 
   const handleAllPrice = (price) => {
@@ -36,6 +37,7 @@ const CartList = () => {
   const handleClearCart = () => {
     setToggler(1);
     deleteCart("cart");
+    onCartChange([]);
   };
 
   const handleCheckOut = () => {

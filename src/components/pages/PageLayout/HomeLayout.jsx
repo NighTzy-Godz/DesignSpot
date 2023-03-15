@@ -2,10 +2,10 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../../ui/navbar/Navbar";
 
-const HomeLayout = () => {
+const HomeLayout = ({ cart }) => {
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar cart={cart} />
       <Outlet></Outlet>
     </React.Fragment>
   );

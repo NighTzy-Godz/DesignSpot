@@ -18,7 +18,11 @@ const Home = () => {
   const { featuredProduct } = useFeatureProduct();
 
   const renderFeatureProduct = featuredProduct.map((item) => {
-    return <ProductCart data={item} />;
+    return (
+      <React.Fragment key={item.id}>
+        <ProductCart data={item} />
+      </React.Fragment>
+    );
   });
 
   return (
@@ -61,7 +65,7 @@ const Home = () => {
               title="Fast Delivery"
             />
             <ReasonBox
-              icon={<i class="fa-solid fa-tags"></i>}
+              icon={<i className="fa-solid fa-tags"></i>}
               title="Discounted Items"
             />
           </div>
