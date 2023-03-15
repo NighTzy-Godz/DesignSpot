@@ -8,6 +8,7 @@ import CartList from "./components/feature/Cart/CartList";
 import ProductLayout from "./components/feature/Product/component/ProductLayout";
 
 import SingleProduct from "./components/feature/Product/component/SingleProduct";
+import About from "./components/pages/About";
 
 import Home from "./components/pages/Home";
 import HomeLayout from "./components/pages/PageLayout/HomeLayout";
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
           <Route path="products" element={<ProductLayout />} />
           <Route path="products/:productId" element={<SingleProduct />} />
           <Route path="cart" element={<CartList />} />
