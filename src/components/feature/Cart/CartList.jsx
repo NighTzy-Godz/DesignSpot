@@ -44,6 +44,7 @@ const CartList = ({ onCartChange }) => {
     toast.success("Successfully Checked Out the Items. Thank You for buying!", {
       autoClose: 2500,
     });
+    onCartChange([]);
     deleteCart("cart");
   };
 
