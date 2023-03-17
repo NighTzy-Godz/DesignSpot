@@ -4,6 +4,7 @@ import "../../../assets/css/navbar.css";
 
 const Navbar = ({ cart }) => {
   const [clicked, setClicked] = useState(false);
+  console.log(cart);
 
   const isEmpty = () => {
     return cart.length === 0 ? "" : "navCart";

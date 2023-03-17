@@ -15,24 +15,24 @@ import HomeLayout from "./components/pages/PageLayout/HomeLayout";
 import { getCart, setCart } from "./services/storage";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [currCart, setCurrCart] = useState([]);
 
   useEffect(() => {
     const currCart = getCart();
     const cart = [];
     if (!currCart) return setCart("cart", cart);
-    setCart(currCart);
+    setCurrCart(currCart);
   }, []);
 
   const handleCartChange = (cart) => {
-    setCart(cart);
+    setCurrCart(cart);
   };
 
   return (
     <BrowserRouter>
       <ToastContainer />
       <Routes>
-        <Route path="/" element={<HomeLayout cart={cart} />}>
+        <Route path="/" element={<HomeLayout cart={currCart} />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="products" element={<ProductLayout />} />
