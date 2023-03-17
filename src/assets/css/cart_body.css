@@ -99,7 +99,7 @@
 
   .cart_body {
     display: block;
-    margin-bottom: 60px !important;
+    margin-top: 40px;
     border-bottom: 1px solid;
   }
 
@@ -114,8 +114,8 @@
   }
 
   .cart_item .img {
-    width: 160px;
-    height: 140px;
+    width: 150px;
+    height: 120px;
   }
 
   .cart_item img {
