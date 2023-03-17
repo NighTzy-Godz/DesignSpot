@@ -33,7 +33,7 @@ const CartBody = ({ data, onCartChange, onAllPriceChange }) => {
   return (
     <React.Fragment>
       <tr className="cart_body">
-        <td className="table-width-100">
+        <td className="table-width-100" data-label="Item">
           <div className="cart_item">
             <div className="img">
               <img src={img} alt="" />
@@ -45,12 +45,12 @@ const CartBody = ({ data, onCartChange, onAllPriceChange }) => {
             </div>
           </div>
         </td>
-        <td className="table-width-80">
+        <td className="table-width-80" data-label="Price">
           <div className="cart_price">
             <h4>P{formatPrice(price)}</h4>
           </div>
         </td>
-        <td className="table-width-80">
+        <td className="table-width-80" data-label="Quantity">
           <div className="cart_quantity">
             <CartCounter
               itemQuantity={itemQuantity}
@@ -58,7 +58,7 @@ const CartBody = ({ data, onCartChange, onAllPriceChange }) => {
             />
           </div>
         </td>
-        <td className="table-width-80">
+        <td className="table-width-80" data-label="Subtotal">
           <div className="cart_subtotal">
             <h4>P{formatPrice(itemSubTotal)}</h4>
           </div>

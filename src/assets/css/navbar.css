@@ -1,4 +1,4 @@
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 700px) {
   .mainNav {
     padding: 12px;
     box-shadow: 0 4px 30px rgba(113, 150, 191, 0.149);
@@ -8,6 +8,7 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
+    flex: 1 0 auto;
   }
 
   .mainNav .logo a {
@@ -18,7 +19,7 @@
 
   .mainNav ul {
     display: flex;
-    gap: 20px;
+    gap: 50px;
   }
 
   .mainNav li a {
@@ -27,15 +28,14 @@
     color: var(--black);
   }
 
-  .mainNav li a.active,
-  .mainNav .components a.active {
+  .mainNav li a.active {
     font-family: sans-bold;
     color: var(--dark-green);
   }
 
   .mainNav .components {
     display: flex;
-    gap: 20px;
+    gap: 50px;
   }
 
   .mainNav .components a {
@@ -60,5 +60,157 @@
     width: 1.5em;
     height: 1.5em;
     font-size: 16px;
+  }
+
+  .nav_btn {
+    display: none;
+  }
+}
+
+@media screen and (575.99px <= width <= 767.98px) {
+  .mainNav {
+    padding: 12px;
+    box-shadow: 0 4px 30px rgba(113, 150, 191, 0.149);
+  }
+
+  .mainNav.show {
+    height: 190px;
+  }
+
+  .mainNav .logo a {
+    font-family: oswald-bold;
+    font-size: 25px;
+    color: var(--black);
+  }
+
+  .mainNav ul {
+    display: none;
+  }
+
+  .mainNav ul.show {
+    display: block;
+
+    position: absolute;
+    margin-top: 40px;
+  }
+
+  .mainNav li a.active {
+    font-family: sans-bold;
+    color: var(--dark-green);
+  }
+
+  .mainNav .components {
+    margin-top: 60px !important;
+  }
+  .mainNav .navCart::before {
+    content: attr(data-content);
+    position: absolute;
+    font-family: sans-bold;
+    color: var(--black);
+    top: -0.5em;
+    right: -0.5em;
+    background-color: var(--light-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 1.3em;
+    height: 1.3em;
+    font-size: 14px;
+  }
+
+  .mainNav ul li a {
+    font-family: sans-reg;
+    font-size: 18px;
+    color: var(--black);
+    position: relative;
+  }
+
+  .mainNav ul li {
+    margin-top: 5px;
+  }
+
+  .nav_btn {
+    position: absolute;
+    top: 23px;
+    right: 35px;
+  }
+  .nav_btn i {
+    color: var(--black);
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .mainNav {
+    padding: 12px;
+    box-shadow: 0 4px 30px rgba(113, 150, 191, 0.149);
+  }
+
+  .mainNav.show {
+    height: 190px;
+  }
+
+  .mainNav .logo a {
+    font-family: oswald-bold;
+    font-size: 25px;
+    color: var(--black);
+  }
+
+  .mainNav ul {
+    display: none;
+  }
+  .mainNav li a.active {
+    font-family: sans-bold;
+    color: var(--dark-green);
+  }
+
+  .mainNav ul.show {
+    display: block;
+
+    position: absolute;
+    margin-top: 40px;
+  }
+
+  .mainNav .components {
+    margin-top: 60px !important;
+  }
+
+  .mainNav ul li a {
+    font-family: sans-reg;
+    font-size: 18px;
+    color: var(--black);
+    position: relative;
+  }
+
+  .mainNav ul li {
+    margin-top: 5px;
+  }
+
+  .mainNav .navCart::before {
+    content: attr(data-content);
+    position: absolute;
+    font-family: sans-bold;
+    color: var(--black);
+    top: -0.4em;
+    right: -0.4em;
+    background-color: var(--light-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    font-size: 14px;
+  }
+
+  .nav_btn {
+    position: absolute;
+    top: 23px;
+    right: 35px;
+  }
+  .nav_btn i {
+    color: var(--black);
+    font-size: 20px;
   }
 }

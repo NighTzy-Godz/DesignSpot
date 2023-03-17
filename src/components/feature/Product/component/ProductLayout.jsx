@@ -109,7 +109,9 @@ const ProductLayout = () => {
 
           <div className="product_layout_right">
             <CurrentItemsLabel
-              message={`${filteredData.length} Items was Found.`}
+              message={`${filteredData.length} Item${
+                filteredData.length > 1 ? "s" : ""
+              } was Found.`}
             />
             {filteredData.length === 0 ? (
               <NoItem />

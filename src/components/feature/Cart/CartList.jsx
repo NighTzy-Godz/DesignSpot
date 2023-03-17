@@ -81,7 +81,7 @@ const CartList = ({ onCartChange }) => {
           <div className="cart_util_btn">
             <LinkButton
               path="/products"
-              label="Go Back to All Products"
+              label=" All Products"
               className="cart_list_btn"
             />
             <Button

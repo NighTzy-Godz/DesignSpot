@@ -6,8 +6,6 @@ import LinkButton from "../../../ui/button/LinkButton";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import CartCounter from "./CartCounter";
-import Button from "../../../ui/button/Button";
-// import cart from "../../../../data/cart";
 
 import { checkCartItem, getCart, setCart } from "../../../../services/storage";
 import formatPrice from "../../../../utils/formatPrice";
@@ -16,6 +14,17 @@ const SingleProduct = ({ onCartChange }) => {
   const { productId } = useParams();
   const navigate = useNavigate();
   const { product } = useSingleProduct(productId);
+  // useEffect(() => {
+  //   document.title = name;
+
+  //   if (Object.keys(product).length === 0) {
+  //     toast.error("Cannot find the item that you are looking for.", {
+  //       autoClose: 2500,
+  //       toastId: "Single Product",
+  //     });
+  //     return navigate("/products");
+  //   }
+  // }, []);
 
   const {
     brand,
@@ -40,14 +49,6 @@ const SingleProduct = ({ onCartChange }) => {
     price: "",
     quantity: "",
     subTotal: "",
-  });
-
-  useEffect(() => {
-    document.title = name;
-    if (!product) {
-      toast.error("Cannot find the item that you are looking for.");
-      return navigate("/products");
-    }
   });
 
   const handleItemQuanity = (quantity) => {
@@ -91,7 +92,7 @@ const SingleProduct = ({ onCartChange }) => {
           <div className="container">
             <LinkButton
               path="/products"
-              label="<= Go Back to All Products"
+              label="Go Back to All Products"
               className="product_goBack_btn"
             />
             <div className="single_product_container">
