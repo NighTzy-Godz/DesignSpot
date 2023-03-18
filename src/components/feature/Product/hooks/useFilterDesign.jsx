@@ -4,7 +4,7 @@ const useFilterDesign = () => {
   const [filterMaxScroll, setFilterMaxScroll] = useState(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 162) return setFilterMaxScroll(true);
+    if (window.scrollY > 187) return setFilterMaxScroll(true);
     setFilterMaxScroll(false);
   };
 

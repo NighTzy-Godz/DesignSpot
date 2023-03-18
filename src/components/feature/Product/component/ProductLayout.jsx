@@ -25,7 +25,6 @@ const ProductLayout = () => {
     currentPage: 1,
     currentCategory: "All Categories",
     search: "",
-    range: 10000,
   });
 
   useEffect(() => {

@@ -38,7 +38,7 @@
 
   .counter_container h3 {
     font-family: sans-bold;
-    width: 40px;
+    width: 45px;
     text-align: center;
     height: 28px;
     font-size: 16px;
@@ -50,7 +50,7 @@
   .counter_container button {
     font-family: sans-reg;
     font-size: 18px;
-    width: 28px;
+    width: 29px;
     height: 28px;
     cursor: pointer;
     outline: none;
