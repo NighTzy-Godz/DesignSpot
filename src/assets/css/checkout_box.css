@@ -26,6 +26,34 @@
   }
 }
 
+@media screen and (767.98px <= width <= 991.98px) {
+  .check_out {
+    margin-top: 40px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.225);
+    padding: 20px 30px;
+  }
+
+  .checkout_container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .checkout_container h5 {
+    font-family: sans-bold;
+    font-size: 16px;
+    color: var(--black);
+    margin-bottom: 15px;
+  }
+
+  .checkout_container h3 {
+    font-family: sans-bold;
+    font-size: 22px;
+    color: var(--black);
+    margin-top: 10px;
+  }
+}
+
 @media screen and (max-width: 767.98px) {
   .check_out {
     margin-top: 40px;

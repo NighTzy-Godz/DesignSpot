@@ -35,7 +35,9 @@ const Navbar = ({ cart }) => {
             </li>
           </ul>
           <div className="logo">
-            <Link to="/">DesignSpot</Link>
+            <Link to="/" onClick={() => setClicked(false)}>
+              DesignSpot
+            </Link>
           </div>
           <ul className={`components ${clicked ? "show" : ""}`}>
             <li>

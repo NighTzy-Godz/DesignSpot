@@ -10,6 +10,14 @@
   }
 }
 
+@media screen and (767.98px <= width <= 991.98px) {
+  .product_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
 @media screen and (575.98px <= width <= 767.98px) {
   .product_list {
     display: grid;
