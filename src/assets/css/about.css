@@ -135,7 +135,7 @@
 @media screen and (max-width: 575.98px) {
   .about {
     /* height: 80vh; */
-    min-height: 100vh;
+    min-height: 92vh;
 
     display: flex;
     justify-content: center;
