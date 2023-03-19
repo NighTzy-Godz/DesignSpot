@@ -12,18 +12,18 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a>
+            <a href="https://www.facebook.com">
               <i class="fa-brands fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a>
+            <a href="https://www.twitter.com">
               <i class="fa-brands fa-twitter"></i>
             </a>
           </li>
 
           <li>
-            <a>
+            <a href="https://www.tiktok.com">
               <i class="fa-brands fa-tiktok"></i>
             </a>
           </li>
