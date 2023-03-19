@@ -1,6 +1,6 @@
 @media screen and (min-width: 100px) {
-  .footer {
-    /* margin-top: auto; */
+  footer {
+    margin-top: auto;
     padding: 12px;
     box-shadow: 0 -4px 30px rgba(113, 150, 191, 0.149);
   }

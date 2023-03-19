@@ -2,7 +2,8 @@ import "../../../assets/css/footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
+      {" "}
       <div className="container">
         <ul>
           <li>
@@ -29,7 +30,7 @@ const Footer = () => {
         </ul>
         <p>Design Spot &copy; 2021</p>
       </div>
-    </div>
+    </footer>
   );
 };
 
