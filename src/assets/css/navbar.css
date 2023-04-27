@@ -89,9 +89,15 @@
 
   .mainNav ul.show {
     display: block;
-
+    background: white;
+    padding-bottom: 20px;
+    width: 100%;
     position: absolute;
     margin-top: 40px;
+    z-index: 100;
+    left: 0;
+    padding-left: 30px;
+    box-shadow: 0 6px 30px rgba(113, 150, 191, 0.149);
   }
 
   .mainNav li a.active {
@@ -164,9 +170,15 @@
 
   .mainNav ul.show {
     display: block;
-
+    background: white;
+    padding-bottom: 20px;
+    width: 100%;
     position: absolute;
     margin-top: 40px;
+    left: 0;
+    z-index: 100;
+    padding-left: 30px;
+    box-shadow: 0 6px 30px rgba(113, 150, 191, 0.149);
   }
 
   .mainNav li a.active {
@@ -243,9 +255,15 @@
 
   .mainNav ul.show {
     display: block;
-
+    background: white;
+    padding-bottom: 20px;
+    width: 100%;
     position: absolute;
     margin-top: 40px;
+    left: 0;
+    z-index: 100;
+    padding-left: 30px;
+    box-shadow: 0 6px 30px rgba(113, 150, 191, 0.149);
   }
 
   .mainNav .components {
